@@ -97,7 +97,7 @@ def clearConsole():
     print(f"{datetime.now()}\n")
 
 # 封装的安全操作工作簿
-def safeWorkbook(func):
+def safeLoadWorkbook(func):
     @wraps(func)  # 装饰器保持原函数的元信息
     def wrapper(filePath, *args, **kwargs):
         wb = openpyxl.load_workbook(filePath)  # 打开工作簿
